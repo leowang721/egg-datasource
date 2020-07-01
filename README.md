@@ -45,6 +45,20 @@ exports.datasource = {
 ```js
 // {app_root}/config/config.default.js
 exports.datasource = {
+  projectName: {
+    mocking: false, // 是否开启mock模式
+    mockUrl: 'https://test.com', // mock url
+    protocol: 'http', // 正式使用的协议
+    host: 'data.com',
+    port: '8080',
+    path: '',
+    onStart(ctx) { // 代理请求前钩子
+      // ...
+    },
+    onEnd(ctx) { // 代理请求后钩子
+      // ...
+    }
+  }
 };
 ```
 
